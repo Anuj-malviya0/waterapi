@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import csv
 import os
 import logging
 from logging.handlers import RotatingFileHandler
 
 app = Flask(__name__)
+CORS(app)  # This will enable CORS for all routes
 
 # Configure logging
 if not app.debug:
